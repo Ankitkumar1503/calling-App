@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "826218923004",
+    "project_id": "calling-app-7cab9",
+    "storage_bucket": "calling-app-7cab9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826218923004:android:1c3c56c8ecc76dc2a7e879",
+        "android_client_info": {
+          "package_name": "com.clikdit.callingapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EaEHDXQwc1PosBfB5GKg0BtKcCRVFxY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
