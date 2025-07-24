@@ -201,14 +201,34 @@ const DialerScreen = () => {
               .map((item, index) => renderKeypadButton(item, index + 6))}
           </View>
 
-          {/* Bottom row with 0, call, and backspace */}
-          <View className="flex-row justify-center items-center gap-8">
+          {/* Fourth row: *, 0, # */}
+          <View className="flex-row justify-center gap-8">
+            <TouchableOpacity
+              className="w-20 h-20 bg-slate-700 rounded-full items-center justify-center m-2"
+              onPress={() => handleKeyPress("*")}
+            >
+              <Text className="text-white text-2xl font-light">*</Text>
+            </TouchableOpacity>
+
             <TouchableOpacity
               className="w-20 h-20 bg-slate-700 rounded-full items-center justify-center m-2"
               onPress={() => handleKeyPress("0")}
             >
               <Text className="text-white text-2xl font-light">0</Text>
+              <Text className="text-gray-400 text-xs mt-1">+</Text>
             </TouchableOpacity>
+
+            <TouchableOpacity
+              className="w-20 h-20 bg-slate-700 rounded-full items-center justify-center m-2"
+              onPress={() => handleKeyPress("#")}
+            >
+              <Text className="text-white text-2xl font-light">#</Text>
+            </TouchableOpacity>
+          </View>
+
+          {/* Bottom row with call and backspace */}
+          <View className="flex-row justify-center items-center gap-8 mt-4">
+            <View className="w-20 h-20 m-2" />
 
             <TouchableOpacity
               className="w-20 h-20 bg-green-500 rounded-full items-center justify-center m-2"

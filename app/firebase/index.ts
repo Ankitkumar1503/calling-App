@@ -40,3 +40,4 @@ try {
 const db = getFirestore(app);
 
 export { auth, db };
+
