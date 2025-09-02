@@ -1,5 +1,5 @@
 import { Feather } from "@expo/vector-icons";
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   FlatList,
   SafeAreaView,
@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { makeCall } from "../services/CallService";
 
 const DialerScreen = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -78,11 +79,23 @@ const DialerScreen = () => {
     }
   };
 
-  const handleCall = () => {
+  const handleCall = async () => {
     if (dialedNumber) {
-      console.log("Calling:", dialedNumber);
-      addToRecentCalls(dialedNumber);
-      setDialedNumber(""); // Clear the dialed number after call
+      try {
+        console.log("Dialing:", dialedNumber);
+
+        // Call backend Twilio endpoint
+        const response =  makeCall(`+91${dialedNumber}`);
+        console.log("Call started:", response);
+
+        // Add to recent calls
+        addToRecentCalls(dialedNumber);
+
+        // Reset number after dialing
+        setDialedNumber("");
+      } catch (error) {
+        console.error("Error starting call:", error);
+      }
     }
   };
 

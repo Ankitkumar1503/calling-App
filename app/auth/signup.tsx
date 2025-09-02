@@ -160,9 +160,9 @@ export default function Signup() {
       />
 
       <View className="flex-row absolute bottom-0 left-0 right-0 items-center mb-16 justify-center">
-        <Text className="text-white">Don't have an account? </Text>
-        <Link href="/auth/signup">
-          <Text className="text-blue-400 font-semibold">Sign up</Text>
+        <Text className="text-white">Back to login </Text>
+        <Link href="/auth/login">
+          <Text className="text-blue-400 font-semibold">Login</Text>
         </Link>
       </View>
     </GradientBackground>

@@ -14,7 +14,7 @@ export default function AuthLayout() {
       }}
     >
       <Stack.Screen
-        name="_layout"
+        name="login"
         options={{
           headerBackVisible: false, // No back button on login
         }}

@@ -1,13 +1,13 @@
 import { Feather } from "@expo/vector-icons";
 import React, { useState } from "react";
 import {
-  FlatList,
-  SafeAreaView,
-  StatusBar,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
+    FlatList,
+    SafeAreaView,
+    StatusBar,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View,
 } from "react-native";
 
 const TaskScreen = () => {

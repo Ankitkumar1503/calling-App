@@ -1,6 +1,7 @@
 // app/_layout.tsx
 import { Stack } from 'expo-router';
 import { ActivityIndicator, View } from 'react-native';
+import { CallProvider } from '../contexts/CallContext';
 import './global.css';
 import { useProtectedRoute } from './hooks/useProtectedRoute';
 import { AuthProvider, useAuth } from './providers/AuthProvider';
@@ -22,11 +23,11 @@ function AppLayout() {
       {/* Auth screens */}
       <Stack.Screen name="auth" options={{ headerShown: false }} />
       
-      {/* Tab screens */}
-      <Stack.Screen name="tabs" options={{ headerShown: false }} />
+      {/* Main app screens */}
+      <Stack.Screen name="apps" options={{ headerShown: false }} />
       
-      {/* Other screens that are not in tabs or auth */}
-      <Stack.Screen name="index" />
+      {/* Index route for initial redirect */}
+      <Stack.Screen name="index" options={{ headerShown: false }} />
     </Stack>
   );
 }
@@ -34,7 +35,9 @@ function AppLayout() {
 export default function RootLayout() {
   return (
     <AuthProvider>
+      <CallProvider>
       <AppLayout />
+      </CallProvider>
     </AuthProvider>
   );
 }
